@@ -4,7 +4,6 @@ Kubegrade is a **Kubernetes platform focused on Day‑2 operations**: automating
 
 It connects directly to the Kubernetes API, so it can work with virtually any CNCF‑conformant cluster: managed (EKS/AKS/GKE), self‑hosted, on‑prem, or hybrid environments.
 
-
 ---
 
 ## What Kubegrade Does
@@ -14,16 +13,20 @@ It connects directly to the Kubernetes API, so it can work with virtually any CN
   Dependency‑aware ordering makes sure the right components are drained, upgraded and validated in the correct sequence.
 
 - **Drift & Health Monitoring for Clusters**  
-  Continuously compares desired vs. actual state across clusters (versions, add‑ons, policies, configs) and surfaces risky drift before it breaks production.  
+  Continuously compares desired vs actual state across clusters (versions, add‑ons, policies, configs) and surfaces risky drift before it breaks production.  
   Highlights which clusters, namespaces or workloads need attention, instead of forcing you to grep logs and dashboards manually.
 
 - **Troubleshooting & Incident Workflows**  
   Correlates events, logs and metrics across namespaces and infrastructure layers to narrow down likely root causes.  
   Proposes concrete remediation steps (rollbacks, restarts, config changes, capacity tweaks) that can be executed via GitOps or CI/CD.
 
-- **Cost & Capacity Optimization**  
-  Analyzes resource usage and scheduling to find over‑provisioned workloads, idle clusters and noisy neighbors.  
-  Suggests rightsizing and scaling changes that respect SLOs, not just raw CPU/Memory graphs.
+- **Alert Sorting & Signal Management**  
+  Ingests alerts from your existing observability stack, de‑duplicates and groups them, and surfaces the ones that actually impact services.  
+  Enriches signals with cluster context and recent changes so on‑call engineers can act quickly instead of hunting for data.
+
+- **Fleet & Policy Management**  
+  Provides multi‑cluster visibility, GitOps‑driven policy enforcement and standardized remediation patterns across your entire fleet.  
+  Ensures that security baselines and platform guardrails are applied consistently, with every fix going through version‑controlled change requests.
 
 ---
 
@@ -40,7 +43,7 @@ Kubegrade is designed to **augment** the stack you already have, not replace it.
   - Can open PRs / MRs in your Git repos or trigger pipelines rather than mutating clusters directly, so everything stays auditable.
 
 - **Observability‑Aware**  
-  - Uses the signals you already collect (metrics, logs, traces) to prioritize issues and validate that workflows actually improved things.  
+  - Uses the signals you already collect (metrics, logs, traces, alerts) to prioritize issues and validate that workflows actually improved things.  
   - Integrates with Prometheus/Grafana, Elastic/OpenSearch and other common stacks.
 
 - **Guardrails & Governance**  
@@ -61,7 +64,7 @@ Kubegrade is designed to **augment** the stack you already have, not replace it.
 ![EKS](https://img.shields.io/badge/EKS-FF9900?logo=amazoneks&logoColor=white)
 ![Azure](https://img.shields.io/badge/Azure-0078D4?logo=microsoftazure&logoColor=white)
 ![AKS](https://img.shields.io/badge/AKS-0078D4?logo=azurekubernetesservice&logoColor=white)
-![Google_Cloud](https://img.shields.io/badge/GCP-4285F4?logo=googlecloud&logoColor=white)
+![GCP](https://img.shields.io/badge/GCP-4285F4?logo=googlecloud&logoColor=white)
 ![GKE](https://img.shields.io/badge/GKE-34A853?logo=googlecloud&logoColor=white)
 ![On‑prem](https://img.shields.io/badge/On--prem_Kubernetes-444?logo=serverfault&logoColor=white)
 ![VMware_Tanzu](https://img.shields.io/badge/Tanzu-607078?logo=vmware&logoColor=white)
@@ -75,27 +78,23 @@ Kubegrade is designed to **augment** the stack you already have, not replace it.
 ![GitLab CI](https://img.shields.io/badge/GitLab_CI-FC6D26?logo=gitlab&logoColor=white)
 ![Jenkins](https://img.shields.io/badge/Jenkins-D24939?logo=jenkins&logoColor=white)
 
-### Observability & Telemetry
+### Observability & Alerting
 ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?logo=prometheus&logoColor=white)
 ![Grafana](https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=white)
 ![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-000000?logo=opentelemetry&logoColor=white)
 ![Loki](https://img.shields.io/badge/Loki-4A8BDA?logo=grafana&logoColor=white)
 ![Elastic](https://img.shields.io/badge/Elastic_Stack-005571?logo=elasticstack&logoColor=white)
 ![OpenSearch](https://img.shields.io/badge/OpenSearch-005EB8?logo=opensearch&logoColor=white)
-
-### Networking, Ingress & Service Mesh
-![NGINX Ingress](https://img.shields.io/badge/NGINX_Ingress-009639?logo=nginx&logoColor=white)
-![Traefik](https://img.shields.io/badge/Traefik-24A1C1?logo=traefikproxy&logoColor=white)
-![Istio](https://img.shields.io/badge/Istio-466BB0?logo=istio&logoColor=white)
-![Linkerd](https://img.shields.io/badge/Linkerd-2FCC71?logo=linkerd&logoColor=white)
-![Envoy](https://img.shields.io/badge/Envoy_Proxy-AC4FC6?logo=envoyproxy&logoColor=white)
-![Cilium](https://img.shields.io/badge/Cilium-1E3264?logo=cilium&logoColor=white)
-![Calico](https://img.shields.io/badge/Calico-ED6A1F?logo=databricks&logoColor=white)
+![PagerDuty](https://img.shields.io/badge/PagerDuty-06AC38?logo=pagerduty&logoColor=white)
+![Slack](https://img.shields.io/badge/Slack-4A154B?logo=slack&logoColor=white)
 
 ---
 
-## Docs & Support
+## Docs & Getting Started
 
-Documentation for Kubegrade will be **published soon**.
+Product documentation is being consolidated and will be **published soon**.
 
-In the meantime, if you have any questions about features, integrations or your specific setup, please **reach out via the support form on our website**: `https://kubegrade.com/company/contact-us/`.
+In the meantime:
+
+- Website & product overview: `https://kubegrade.com`  
+- To discuss your setup or request a demo, contact us via the support form: `https://kubegrade.com/company/contact-us/`.
